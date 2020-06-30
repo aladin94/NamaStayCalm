@@ -1,0 +1,205 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Pangolin', cursive;
+}
+
+.app {
+  height: 100vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.time-select,
+.sound-picker{
+  height: 80%;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.player-container {
+  height: 99%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+
+.player-container {
+  position: relative;
+}
+
+.header{
+  border-bottom: 4px groove black;
+  color: gold;
+  position: absolute;
+  top: 0;
+  font-size: 4em;
+}
+
+.play {
+  position: absolute;
+  bottom: 52%;
+  cursor: pointer;
+}
+
+.middlediv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.track-outline,
+.moving-outline {
+  position: absolute;
+  height: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-90deg);
+  pointer-events: none;
+}
+
+
+
+.time-display{
+  font-size: 50px;
+  bottom: 8%;
+  color: gold;
+}
+
+.time-display,
+.replay {
+  position: absolute;
+}
+
+
+.replay {
+  text-shadow: 3px 1px 3px gold;
+  font-size: 1.5em;
+  left: 42%;
+  top: 72%;
+  cursor: pointer;
+}
+
+video {
+  position: fixed;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  z-index: -10;
+}
+
+.time-select button,
+.sound-picker button {
+  color: gold;
+  width: 30%;
+  height: 10%;
+  background: none;
+  cursor: pointer;
+  font-size: 20px;
+  transition: all 0.5s ease;
+}
+
+.time-select button{
+  /* padding: 5px; */
+  font-size: 1.5em;
+  height: 10vh;
+  border: 2px solid white;
+  border-radius: 5px;
+  position: relative;
+}
+
+
+
+.time-select button:hover{
+  color: gold;
+  background-color: rgba(19, 6, 32, 0.85);
+}
+
+.sound-picker button{
+  border: none;
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  padding: 30px;
+}
+
+.sound-picker button:hover {
+  transform: translateY(-7px);
+}
+
+.sound-picker button:nth-child(1){
+  background-color: slategray;
+}
+
+.sound-picker button:nth-child(2){
+  background-color: gold;
+}
+
+.sound-picker button img{
+  height: 100%;
+}
+
+
+/* Mobile Size */
+@media only screen and (max-width: 700px) {
+  .app {
+    background-color: rgba(0, 0, 0, 0.884);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-self: center;
+    position: relative;
+  }
+  
+  .vid-container {
+    opacity: 0;
+  }
+
+
+  .time-select button{
+    padding: 10px;
+    font-size: 1.2rem;
+    height: 12vh;
+    width: 89px;
+  }
+
+  .player-container {
+    height: 100vh;
+  }
+
+  .header {
+    font-size: 2.5em;
+    width: 55vw;
+  }
+  
+  .track-outline {
+    opacity: 0;
+  }
+
+  .replay {
+    position: absolute;
+    top: 69%;
+    left: 25%;
+
+  }
+  .time-display{
+    padding: -5em;
+  }
+
+  .time-select {
+    font-size: 0.5em;
+  }
+
+  .sound-picker button {
+    height: 100px;
+    width: 100px;
+  }
+}
